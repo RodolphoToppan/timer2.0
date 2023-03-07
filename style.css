@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-card-light: #E1E1E6;
+  --bg-card-light-selected: #02799D;
+  --font-color-light: #323238;
+  --font-color-contrast: #FFFFFF;
+
+  --font-color-dark: #FFFFFF;
+  --button-color-dark: #C4C4CC;
+  --bg-card-dark: #29292E;
+  --bg-card-dark-selected: #0A3442;
+  --bg-main: #121214;
+
+  font-size: 62.5%;
+}
+ body {
+  font-size: 1.6rem;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  display: grid;
+  background-color: var(--font-color-contrast);
+  color: var(--font-color-light);
+}
+
+main.dark {
+  background: var(--bg-main);
+  color: var(--font-color-dark);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  transition: scale 0.3s;
+}
+
+input[type="range"], input[type="range"]::-webkit-slider-thumb {
+  background: var(--font-color-light);
+
+
+  cursor: pointer;
+}
+
+input[type="range"] {
+  appearance: none;
+  width: 9rem;
+  height: 0.4rem;
+
+  border-radius: 0.5rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 1.6rem;
+  height: 1.6rem;
+
+  border-radius: 50%;
+}
+
+button:hover {
+  scale: 1.1;
+}
+
+button:disabled {
+  filter: opacity(0.7);
+  cursor: not-allowed;
+}
+
+button.dark svg path {
+  fill: var(--button-color-dark);
+}
+
+.container {
+  display: grid;
+  grid-template-areas: 
+  "header header"
+  "countdown cards"
+  ;
+
+  align-content: flex-start;
+  align-items: center;
+  justify-items: center;
+}
+
+header {
+  display: flex;
+  grid-area: header;
+  align-self: center;
+  justify-self: flex-end;
+
+  padding: 6rem 6rem 9.2rem 0;
+}
+
+.hide {
+  display: none;
+  opacity: 0;
+}
+
+.countdown {
+  display: grid;
+  grid-area: countdown;
+  justify-items: center;
+  gap: 1.7rem;
+}
+
+.timer {
+  display: flex;
+
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+}
+
+.controls {
+  display: flex;
+  gap: 4rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3.2rem;
+  grid-area: cards;
+}
+
+.card {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  gap: 3.2rem;
+
+  width: 13.8rem;
+  height: 15.2rem;
+  padding: 2.4rem;
+  border-radius: 2.4rem;
+  
+  cursor: pointer;
+
+  background-color: var(--bg-card-light);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  scale: 1.1;
+  background: #c8c8ca;
+}
+
+div.selected {
+  background-color: var(--bg-card-light-selected);
+  transition: all 0.3s;
+}
+
+div.selected:hover {
+  background: #00607e;
+}
+
+div.selected path {
+  fill: var(--font-color-contrast);
+}
+
+div.selected input[type="range"], div.selected input[type="range"]::-webkit-slider-thumb {
+  background: var(--font-color-contrast);
+}
+
+.card.dark {
+  background-color: var(--bg-card-dark);
+}
+
+.card.dark input[type="range"], .card.dark input[type="range"]::-webkit-slider-thumb {
+  background: var(--font-color-dark);
+}
+
+.card.dark path {
+  fill: var(--bg-card-light);
+}
+
+.card.dark:hover {
+  scale: 1.1;
+  background: #666666;
+}
+
+div.selected.dark {
+  background-color: var(--bg-card-dark-selected);
+}
+
+div.selected.dark:hover {
+  background: #034256;
+}
+
+div.selected path {
+  fill: var(--font-color-contrast);
+}
